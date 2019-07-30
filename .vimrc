@@ -187,4 +187,5 @@ let g:airline_symbols.linenr = ''
 "" vim-css-color
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
-
+"" Alias
+command NER NERDTree
