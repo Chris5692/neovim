@@ -14,10 +14,6 @@ Plugin 'file:///home/gmarik/path/to/plugin'
 Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
 
 "" Custom Plugin
-Plugin 'avr.vim'
-Plugin 'css3'
-Plugin 'html5.vim'
-"Plugin 'indenthml.vim'
 Plugin 'molokai'
 Plugin 'scrooloose/nerdtree'
 Plugin 'Syntastic'
