@@ -131,15 +131,13 @@ set encoding=utf-8		" Encoding
 set path+=**			" setting path for the vim
 set wildmenu			" A menu appeared from the wild
 set t_Co=256        		" Set colors to 256
-"set guifont= Arimo Nerd Font:h7
+let NERDTreeShowHiddenFiles=1	" NERDTree config for showing hidden files
+let NERDTreeShowBookmarks=1	" NERDTree config for showing bookmarks
 
 "" Vim colorschemees
 colorscheme molokai
 "au InsertLeave * colorscheme darkblue
 "au InsertEnter * colorscheme molokai
-
-"" NERDTree config for hidden files
-let NERDTreeShowHidden=1
 
 "" Vim Airline themes
 let g:airline_theme='minimalist'
