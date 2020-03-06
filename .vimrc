@@ -1,43 +1,22 @@
-"" Pathogen
-"execute pathogen#infect()
-"filetype plugin indent on
+filetype plugin indent on
+set runtimepath^=~/.vim/bundle
+set runtimepath^=~/.vim/plugged
 
-"" Vundle
-set nocompatible              " be iMproved, required
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'git://git.wincent.com/command-t.git'
-Plugin 'file:///home/gmarik/path/to/plugin'
-Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+call plug#begin() 
+Plug 'crusoexia/vim-monokai' 
+Plug 'tomasr/molokai'
+Plug 'rakr/vim-one'
+Plug 'chirsbra/unicode.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'vim-syntastic/Syntastic'
+Plug 'chrisbra/unicode.vim'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+call plug#end()
 
-"" Custom Plugin
-Plugin 'molokai'
-Plugin 'scrooloose/nerdtree'
-Plugin 'Syntastic'
-Plugin 'unicode.vim'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'skammer/vim-css-color'
-
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-"" vim-unicode
-if has("multi_byte")
-if &termencoding == ""
-let &termencoding = &encoding
-endif
-set encoding=utf-8
-setglobal fileencoding=utf-8
-" Uncomment to have 'bomb' on by default for new
-" Note, this will not apply to the first,empty buffer created at Vim startup.
-"setglobal bomb
-set fileencodings=ucs-bom,utf-8,latin1
-endif
-
+"source ~/.vim/bundle/molokai/colors/molokai.vim
+"source ~/.vim/bundle/vim-css-color/after/syntax/css.vim
+"source ~/.vim/plugged/vim-monokai/colors/monokai.vim
 
 "" NERDTree Customization
 " Delete buffer while keeping window layout (don't close buffer's windows).
@@ -115,6 +94,7 @@ command! -bang -complete=buffer -nargs=? Bclose call <SID>Bclose('<bang>','<args
 nnoremap <silent> <Leader>bd :Bclose<CR>
 nnoremap <silent> <Leader>bD :Bclose!<CR>
 
+
 "" Normal configs
 set number			" Setting numbers
 syntax on			" Syntax highlighting for vim
@@ -131,16 +111,20 @@ set encoding=utf-8		" Encoding
 set path+=**			" setting path for the vim
 set wildmenu			" A menu appeared from the wild
 set t_Co=256        		" Set colors to 256
-let NERDTreeShowHiddenFiles=1	" NERDTree config for showing hidden files
+set hlsearch 			" Highlight searches 
+set wildmode=longest,list,full	" auto complete
+set splitbelow splitright
+let NERDTreeShowHidden=1	" NERDTree config for showing hidden files
 let NERDTreeShowBookmarks=1	" NERDTree config for showing bookmarks
 
 "" Vim colorschemees
 colorscheme molokai
-"au InsertLeave * colorscheme darkblue
-"au InsertEnter * colorscheme molokai
+"set background= dark
+"au InsertLeave * colorscheme dark
+"au InsertEnter * colorscheme light
 
-"" Vim Airline themes
-let g:airline_theme='minimalist'
+"" Vim Airline themes 
+let g:airline_theme='minimalist' 
 let g:airline#extensions#tabline#enabled=1
 let g:airline#entensions#tabline#left_sep=''
 let g:airline#extensions#tabline#left_alt_sep='|'
@@ -185,5 +169,21 @@ let g:airline_symbols.linenr = ''
 "" vim-css-color
 let g:cssColorVimDoNotMessMyUpdatetime = 1
 
+
 "" Alias
 command NER NERDTree
+
+inoremap [; <Esc>
+
+"" VIM navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+"" Vim split screen navigation
+" Use ctrl-[hjkl] to select the active split!
+nmap <silent> <c-k> :wincmd k<CR>
+nmap <silent> <c-j> :wincmd j<CR>
+nmap <silent> <c-h> :wincmd h<CR>
+nmap <silent> <c-l> :wincmd l<CR>
