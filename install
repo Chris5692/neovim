@@ -1,4 +1,5 @@
 ## Easy way to get neovim setup ; 
 
-mkdir ~/.config ; mkdir ~/.config/nvim ; curl -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ; vim -c PlugInstall 
+mkdir ~/.config ; mkdir ~/.config/nvim ; curl -fLo ~/.config/nvim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim ; nvim -c PlugInstall 
+
 
