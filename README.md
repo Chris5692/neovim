@@ -1,5 +1,8 @@
 # vim
-# Using vim-plug now.
+# For setting up the editor.
 
 #Installation:
-		`git clone https://github.com/chris5692/vim.git ~/.vim ; ~/.vim/install_script ; `
+		`curl -fLo /tmp/install https://raw.githubusercontent.com/chris5692/vim/master/install ; chmod +x /tmp/install ; /tmp/install`
+
+# What this script does?
+It downloads the install script into the tmp directory and installs VIm-Plug in '~/.vim/autoload/plug.vim' for installing addons in '~/.vim/plugged/'.
