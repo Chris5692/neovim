@@ -1,4 +1,3 @@
-## vim
 # For setting up the editor.
 
 #Installation:
